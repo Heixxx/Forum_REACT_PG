@@ -1,0 +1,491 @@
+$main-color: rgb(20, 120, 240);
+$txt-color: #dddddd;
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        0deg,
+        rgb(57, 58, 95) 0%,
+        rgba(40, 40, 40, 1) 100%
+    );
+}
+
+//GLOBAL
+
+.btn-anim {
+    li:hover {
+        transform: scale(1.2);
+    }
+}
+input,
+textarea {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 16px;
+    resize: none;
+}
+textarea {
+    color: black;
+}
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+.logo {
+    margin-top: 80px;
+    font-size: 30px;
+    color: $main-color;
+}
+
+.btn {
+    margin: 20px;
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    &:hover {
+        background-color: $main-color;
+        color: $txt-color;
+    }
+}
+
+.icons {
+    position: absolute;
+    color: white;
+    font-size: 100px;
+    opacity: 0.02;
+    text-transform: uppercase;
+    z-index: -111;
+    font-weight: bold;
+    .iconX {
+        animation: icon-right 55s infinite linear;
+        position: absolute;
+        left: 10vw;
+        top: 10vh;
+    }
+    .iconY {
+        animation: icon-left 45s infinite linear;
+        position: absolute;
+        left: 15vw;
+        top: 55vh;
+    }
+    .iconZ {
+        animation: icon-right 65s infinite linear;
+        position: absolute;
+        left: 75vw;
+        top: 24vh;
+    }
+    .iconO {
+        animation: icon-left 65s infinite linear;
+        position: absolute;
+        left: 60vw;
+        top: 66vh;
+    }
+}
+
+.postTable {
+    li {
+        list-style: none;
+        transition: transform 0.3s;
+        margin: 20px;
+    }
+    a {
+        text-decoration: none;
+        color: $txt-color;
+    }
+    p {
+        font-size: 12px;
+        color: #c6c6c6;
+    }
+}
+
+//NAV
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    ul {
+        display: flex;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            list-style: none;
+            width: 100%;
+            flex-wrap: nowrap;
+            transition: 0.3s;
+            margin-right: 20px;
+
+            a {
+                color: $txt-color;
+                padding: 10px;
+                text-decoration: none;
+            }
+            .beta_logo {
+                font-size: 26px;
+                font-weight: bold;
+                display: flex;
+                padding: 10px;
+                margin-left: 10px;
+                text-transform: uppercase;
+                max-width: 200px;
+                span {
+                    color: $main-color;
+                    background-color: none;
+                    margin-left: 5px;
+                }
+            }
+        }
+        .login {
+            display: flex;
+            justify-content: end;
+            font-size: 20px;
+            font-weight: bold;
+            .userName {
+                transition: none !important;
+                color: $main-color;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+.mainList {
+    .categoryList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        ul {
+            li {
+                text-align: center;
+                list-style: none;
+                font-size: 22px;
+                margin: 20px;
+                transition: 0.3s;
+                a {
+                    padding: 5px;
+                    color: white;
+                    z-index: 1;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.postList {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+
+    .iconX {
+        left: 5vw;
+        top: 10vh;
+    }
+    .iconY {
+        left: -15vw;
+        top: 55vh;
+    }
+    .iconZ {
+        left: -40vw;
+        top: 24vh;
+    }
+    .iconO {
+        left: 20vw;
+        top: 66vh;
+    }
+}
+.postDetails {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+    transition: transform 0.3s 0.2s;
+    .postContent {
+        margin: 20px;
+        text-align: left;
+        padding: 20px;
+        min-width: 500px;
+        max-width: 500px;
+        min-height: 60px;
+        max-height: 300px;
+        padding-top: 20px;
+        margin: 0 auto;
+        border-radius: 10px;
+        color: $txt-color;
+        height: 360px;
+        background-color: rgba(0, 0, 32, 0.3);
+        letter-spacing: 1px;
+        font-size: 16px;
+    }
+    .postTime {
+        margin-bottom: 50px;
+    }
+    .content {
+        margin: 20px;
+        margin-top: 50px;
+    }
+    .btnComment {
+        margin: 20px auto;
+        margin-right: 20px;
+    }
+    .comments {
+        max-width: 1200px;
+        min-height: 500px;
+        li {
+            transform: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btnSaveChanges {
+                margin: 10px;
+                width: 100px;
+                height: 30px;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 10px;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                &:hover {
+                    background-color: $main-color;
+                    color: $txt-color;
+                }
+            }
+            textarea {
+                width: 200px;
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .commentAuthor {
+            margin: 12px;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            color: $main-color;
+            text-shadow: 1px 1px 1px rgb(77, 77, 77);
+        }
+        .commentTxt {
+            color: $txt-color;
+            font-size: 16px;
+        }
+        .commentTitle {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: $txt-color;
+        }
+        .addComment {
+            display: flex;
+            margin-top: 60px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            textarea {
+                padding: 5px;
+                font-size: 16px;
+                min-width: 300px;
+                max-width: 300px;
+                min-height: 65px;
+                max-height: 65px;
+            }
+            button {
+                margin-bottom: 60px;
+            }
+        }
+    }
+    .btnEditComment {
+        margin-left: 20px;
+        border: none;
+        background: none;
+        color: rgb(0, 255, 0);
+        cursor: pointer;
+    }
+    .btnDeleteComment {
+        padding: 10px;
+        margin-left: 10px;
+        background: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: rgb(255, 56, 56);
+        cursor: pointer;
+        border: none;
+    }
+
+    .iconX {
+        left: -40vw;
+        top: 40vh;
+    }
+    .iconY {
+        left: -5vw;
+        top: 70vh;
+    }
+    .iconZ {
+        left: -20vw;
+        top: 19vh;
+    }
+    .iconO {
+        left: 30vw;
+        top: 66vh;
+    }
+}
+.postForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        margin: 20px;
+        text-align: center;
+        input {
+            width: 200px;
+            height: 30px;
+        }
+        textarea {
+            max-width: 260px;
+            min-width: 260px;
+            max-height: 100px;
+            min-height: 60px;
+        }
+    }
+    .iconX {
+        left: -39vw;
+        top: 10vh;
+    }
+    .iconY {
+        left: 15vw;
+        top: 20vh;
+    }
+    .iconZ {
+        left: -30vw;
+        top: -50vh;
+    }
+    .iconO {
+        left: 26vw;
+        top: -29vh;
+    }
+}
+.loginPage,
+.registerPage {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    .logo {
+        margin: 20px;
+        margin-top: 200px;
+    }
+    p {
+        color: $txt-color;
+        margin-top: 10px;
+    }
+    .btn {
+        width: 120px;
+        height: 40px;
+    }
+    .iconX {
+        left: -39vw;
+        top: 60vh;
+    }
+    .iconY {
+        left: 15vw;
+        top: 20vh;
+    }
+    .iconZ {
+        left: -10vw;
+        top: -6vh;
+    }
+    .iconO {
+        left: 26vw;
+        top: 49vh;
+    }
+}
+.registerPage {
+    .iconX {
+        left: -29vw;
+        top: 50vh;
+    }
+    .iconY {
+        left: 17vw;
+        top: 10vh;
+    }
+    .iconZ {
+        left: -6vw;
+        top: 16vh;
+    }
+    .iconO {
+        left: 26vw;
+        top: 39vh;
+    }
+}
+
+@keyframes icon-right {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes icon-left {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+    }
+    .content {
+        .postContent {
+            min-width: 300px;
+            max-width: 300px;
+        }
+    }
+    nav {
+        ul {
+            li {
+                .beta_logo {
+                    font-size: 16px;
+                    margin: 30px;
+                }
+                .login {
+                }
+                a, .userName{
+                    font-size: 14px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
